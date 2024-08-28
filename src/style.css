@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* header,#contents,section,footer,div,article {
+  border: 1px solid black;
+} */
+
+/* header 스타일 */
+header {
+  background-color: gray;
+  height: 400px;
+  background: url("./src/assets/index_headerback.jpg") center;
+  background-size: cover;
+}
+
+header nav {
+  background: #111;
+  color: #eee;
+  text-align: center;
+}
+header nav ul li {
+  display: inline-block;
+  margin: 15px 30px;
+  list-style: none;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* contents 스타일 */
+#contents section {
+  border: 1px dotted #ccc;
+  padding: 7%;
+}
+#contents section .page-title {
+  margin: 20px 0;
+  font-size: 1.3em;
+}
+#contents section .content {
+  line-height: 2.5em;
+  font-size: 1.1em;
+}
+#contents .photo {
+  display: none; /* 이미지가 있는 공간을 숨김 */
+}
+#contents .text {
+  padding: 10px 20px;
+}
+
+/* footer 스타일 */
+footer {
+  background: #222;
+  color: #eee;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* 태블릿 모드 - 768px 이상 ~ 960px 이하 */
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  #contents {
+    display: flex;
+    flex-wrap: wrap; /* 여러줄로 항목 배치 */
+  }
+  #contents section {
+    width: 50%;
+  }
+  #contents section#choice {
+    width: 100%;
+  }
+}
+
+/* pc 모드 - 961px 이상 */
+@media screen and (min-width: 961px) {
+  /* contents 스타일 */
+  #contents .photo {
+    display: block; /* 이미지가 있는 공간을 보이게 하기 */
+    text-align: center; /* photo 내의 이미지 중간 정렬 */
+  }
+  #contents .content {
+    display: flex;
+  }
+  #contents article {
+    width: 50%;
+  }
+}
