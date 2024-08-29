@@ -1,4 +1,4 @@
-function Section({ id, title, img, alt, text }) {
+function Section({ id, title, img, alt, children }) {
   return (
     <section id={id}>
       <div className="page-title">
@@ -8,11 +8,7 @@ function Section({ id, title, img, alt, text }) {
         <article className="photo">
           <img src={img} alt={alt} />
         </article>
-        <article className="text">
-          {text.map((item) => (
-            <p>{item}</p> // 배열의 각 요소를 <p> 태그로 감싸서 출력
-          ))}
-        </article>
+        <article className="text">{children}</article>
       </div>
     </section>
   );
