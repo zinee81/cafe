@@ -1,8 +1,18 @@
 import index_ice from "../../assets/index_ice.jpg";
 import shop_small from "../../assets/shop-small.jpg";
 import fireworks from "../../assets/fireworks.png";
+import { useState } from "react";
+const randomImg = [index_ice, shop_small, fireworks];
 
 function Choice() {
+  const [random, setRondom] = useState(0);
+
+  function getRandomInt() {
+    // 1 ~ max 숫자안의 랜덤숫자를 출력
+    const randomInt = Math.floor(Math.random() * randomImg.length);
+    setRondom(randomInt);
+  }
+
   return (
     <section id="choice">
       <div className="page-title">
@@ -18,18 +28,12 @@ function Choice() {
           </ol>
         </article>
         <article className="photo">
-          <img src={randomImg[getRandomInt(2)]} alt="ice coffee" />
+          <img src={randomImg[random]} alt="ice coffee" />
+          <br />
+          <button onClick={getRandomInt}>이미지변경</button>
         </article>
       </div>
     </section>
   );
 }
-
-const randomImg = [index_ice, shop_small, fireworks];
-
-function getRandomInt(max) {
-  // 1 ~ max 숫자안의 랜덤숫자를 출력
-  return Math.floor(Math.random() * (max + 1));
-}
-
 export default Choice;
